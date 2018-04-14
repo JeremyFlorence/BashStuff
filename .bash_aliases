@@ -12,13 +12,17 @@ activateEnv() {
     source $HOME/Programming/venvs/"$1"/bin/activate
 }
 
-# alias for activateEnv()
-alias activate=activateEnv
 
 # function to update aliases
 updateAliases() {
     source ~/.bash_aliases or source ~/.bashrc
 }
+
+# alias for createVenv
+alias createvenv=createVenv
+
+# alias for activateEnv()
+alias activate=activateEnv
 
 # alias for updateAliases()
 alias updatealiases=updateAliases
