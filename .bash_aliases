@@ -2,18 +2,18 @@
 
 # function to create a virtual environment
 createVenv() {
-    python3 -m venv $HOME/Programming/venvs/"$1"
+    python3.7 -m venv $HOME/venvs/"$1"
 }
 
 # function to activate virtual environment created with venv
 activateEnv() {
-    source $HOME/Programming/venvs/"$1"/bin/activate
+    source $HOME/venvs/"$1"/bin/activate
 }
 
 # ------------------------------ Aliases --------------------------------------
 
 # alias to use python3 by default
-alias python=python3
+alias python=python3.7
 
 # alias for createVenv
 alias createvenv=createVenv
