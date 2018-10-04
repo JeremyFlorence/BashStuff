@@ -26,3 +26,6 @@ alias settimelocal="timedatectl set-local-rtc 1"
 
 # alias for updateAliases()
 alias updatealiases="source ~/.bash_aliases or source ~/.bashrc"
+
+# alias to install terminal color schemes
+alias getcolorschemes="wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh && rm gogh"
