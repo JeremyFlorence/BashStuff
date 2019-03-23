@@ -2,12 +2,16 @@
 
 # function to create a virtual environment
 createVenv() {
-    python"$2" -m venv $HOME/venvs/"$1"
+    python"$2" -m venv "$HOME"/venvs/"$1"
 }
 
 # function to activate virtual environment created with venv
 activateEnv() {
-    source $HOME/venvs/"$1"/bin/activate
+    if [[ "$OSTYPE" == "msys" ]]; then
+        source "$HOME"/venvs/"$1"/Scripts/activate
+    else
+        source "$HOME"/venvs/"$1"/bin/activate
+    fi
 }
 
 # ------------------------------ Aliases --------------------------------------
@@ -23,9 +27,6 @@ alias activate=activateEnv
 
 # alias to set linux to use local time (for dual boot systems with windows)
 alias settimelocal="timedatectl set-local-rtc 1"
-
-# alias for updateAliases()
-alias updatealiases="source ~/.bash_aliases or source ~/.bashrc"
 
 # alias to install terminal color schemes
 alias getcolorschemes="wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh && rm gogh"
