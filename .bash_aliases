@@ -2,7 +2,12 @@
 
 # function to create a virtual environment
 createVenv() {
-    python"$2" -m venv "$HOME"/venvs/"$1"
+    # If we're on windows we wont explicitly use python3
+    if [[ "$OSTYPE" == "msys" ]]; then
+        python -m venv "$HOME"/venvs/"$1"
+    else
+        python3 -m venv "$HOME"/venvs/"$1"
+    fi
 }
 
 # function to activate virtual environment created with venv
@@ -15,9 +20,6 @@ activateEnv() {
 }
 
 # ------------------------------ Aliases --------------------------------------
-
-# alias to use python3 by default
-alias python=python3
 
 # alias for createVenv
 alias createvenv=createVenv
